@@ -1,13 +1,17 @@
+# Aliases
 alias la='ls -AGF'
 alias ls='ls -GF'
 alias ll='ls -lGF'
 alias lla='ls -alGF'
 
-## Homebrew
-export HOMEBREW_GITHUB_API_TOKEN='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-
-## Macvim
+## Environments
 export EDITOR=vim
 
-## nodebrew
+## MacVim
+if [ -d /Applications/MacVim.app ]; then
+  PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
+  alias gvim="open /Applications/MacVim.app"
+fi
+
+## rbenv
 eval "$(rbenv init -)"

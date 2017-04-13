@@ -388,11 +388,7 @@ nnoremap <silent> [unite]h :<C-u>Unite<Space>history/yank<CR>
 " Syntastic
 " --------------------------
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 'mode': 'passive',
   \ 'active_filetypes': ['ruby', 'javascript', 'perl'],
   \ 'passive_filetypes': [] }
 let g:syntastic_perl_checkers = ['perl', 'podchecker']

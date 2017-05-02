@@ -393,7 +393,7 @@ let g:syntastic_mode_map = { 'mode': 'passive',
   \ 'passive_filetypes': [] }
 let g:syntastic_perl_checkers = ['perl', 'podchecker']
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_check_on_wq = 0
 
 " --------------------------

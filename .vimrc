@@ -388,8 +388,8 @@ nnoremap <silent> [unite]h :<C-u>Unite<Space>history/yank<CR>
 " Syntastic
 " --------------------------
 
-let g:syntastic_mode_map = { 'mode': 'passive',
-  \ 'active_filetypes': ['ruby', 'javascript', 'perl'],
+let g:syntastic_mode_map = { 'mode': 'active',
+  \ 'active_filetypes': [],
   \ 'passive_filetypes': [] }
 let g:syntastic_perl_checkers = ['perl', 'podchecker']
 let g:syntastic_ruby_checkers = ['rubocop']

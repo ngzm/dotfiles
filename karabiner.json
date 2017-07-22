@@ -75,7 +75,8 @@
             "name": "Default profile",
             "selected": true,
             "simple_modifications": {
-                "japanese_eisuu": "left_command"
+                "japanese_eisuu": "left_command",
+                "japanese_kana": "right_command"
             },
             "virtual_hid_keyboard": {
                 "caps_lock_delay_milliseconds": 0,

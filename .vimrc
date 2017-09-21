@@ -418,6 +418,8 @@ let g:vim_markdown_folding_disabled=1
 
 au BufRead,BufNewFile *.ect set filetype=html
 au BufRead,BufNewFile *.styl set filetype=css
+au BufRead,BufNewFile *.jsx set filetype=javascript
+au BufRead,BufNewFile *.vue set filetype=javascript
 
 " --------------------------
 " カラースキーム設定

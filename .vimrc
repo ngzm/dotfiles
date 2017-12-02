@@ -22,7 +22,9 @@ set ruler
 set showmatch
 
 " カーソル行の背景色を変える
-set cursorline
+" --> カーソルが遅くなるので設定しない
+" set cursorline
+set nocursorline
 
 " ステータス行を常に表示
 set laststatus=2

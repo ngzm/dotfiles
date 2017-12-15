@@ -17,26 +17,42 @@
                             {
                                 "from": {
                                     "key_code": "left_command",
-                                    "modifiers": { "optional": [ "any" ] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
-                                    { "key_code": "left_command" }
+                                    {
+                                        "key_code": "left_command"
+                                    }
                                 ],
                                 "to_if_alone": [
-                                    { "key_code": "japanese_eisuu" }
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    }
                                 ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "right_command",
-                                    "modifiers": { "optional": [ "any" ] }
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
                                 },
                                 "to": [
-                                    { "key_code": "right_command" }
+                                    {
+                                        "key_code": "right_command"
+                                    }
                                 ],
                                 "to_if_alone": [
-                                    { "key_code": "japanese_kana" }
+                                    {
+                                        "key_code": "japanese_kana"
+                                    }
                                 ],
                                 "type": "basic"
                             }
@@ -46,10 +62,53 @@
                         "description": "ESC -> ESC + eisuu",
                         "manipulators": [
                             {
-                                "from": { "key_code": "escape" },
+                                "from": {
+                                    "key_code": "escape"
+                                },
                                 "to": [
-                                    { "key_code": "escape" },
-                                    { "key_code": "japanese_eisuu" }
+                                    {
+                                        "key_code": "escape"
+                                    },
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    }
+                                ],
+                                "conditions": [
+                                  {
+                                    "type": "frontmost_application_if",
+                                    "bundle_identifiers": [
+                                      "^com\\.apple\\.Terminal$",
+                                      "^com\\.googlecode\\.iterm2$",
+                                      "^org\\.vim\\."
+                                    ]
+                                  }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": {
+                                      "mandatory": [ "control" ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    },
+                                    {
+                                        "key_code": "japanese_eisuu"
+                                    }
+                                ],
+                                "conditions": [
+                                  {
+                                    "type": "frontmost_application_if",
+                                    "bundle_identifiers": [
+                                      "^com\\.apple\\.Terminal$",
+                                      "^com\\.googlecode\\.iterm2$",
+                                      "^org\\.vim\\."
+                                    ]
+                                  }
                                 ],
                                 "type": "basic"
                             }

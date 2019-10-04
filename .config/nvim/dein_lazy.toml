@@ -1,0 +1,63 @@
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertEnter'
+hook_source = '''
+  call deoplete#enable()
+'''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_add = '''
+  nnoremap <silent> <Space>f :<C-u>Denite<Space>file<CR>
+  nnoremap <silent> <Space>fr :<C-u>Denite<Space>file/rec<CR>
+  nnoremap <silent> <Space>fo :<C-u>Denite<Space>file/old<CR>
+  nnoremap <silent> <Space>b :<C-u>Denite<Space>buffer<CR>
+  nnoremap <silent> <Space>bf :<C-u>DeniteBufferDir<Space>file<CR>
+  nnoremap <silent> <Space>bfr :<C-u>DeniteBufferDir<Space>file/rec<CR>
+  nnoremap <silent> <Space>g :<C-u>Denite<Space>grep<CR>
+  nnoremap <silent> <Space>l :<C-u>Denite<Space>line<CR>
+'''
+
+hook_post_source = '''
+  " Change denite default options
+  let s:denite_win_width_percent = 0.85
+  let s:denite_win_height_percent = 0.7
+  call denite#custom#option('default', {
+      \ 'split': 'floating',
+      \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
+      \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
+      \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
+      \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
+      \ })
+
+  " Change denite file* sorters
+  call denite#custom#source('file/rec', 'sorters', ['sorter/word'])
+  call denite#custom#source('file', 'sorters', ['sorter/word'])
+'''
+
+[plugins.ftplugin]
+denite = '''
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> t
+  \ denite#do_map('do_action', 'tabopen')
+  nnoremap <silent><buffer><expr> s
+  \ denite#do_map('do_action', 'split')
+  nnoremap <silent><buffer><expr> v
+  \ denite#do_map('do_action', 'vsplit')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <BS>
+  \ denite#do_map('move_up_path')
+  nnoremap <silent><buffer><expr> u
+  \ denite#do_map('move_up_path')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+'''

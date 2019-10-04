@@ -119,3 +119,13 @@ set clipboard=unnamed,unnamedplus
 
 " マウスの入力を受け付ける
 set mouse=a
+
+" --------------------------
+"  etc.
+" --------------------------
+
+" カーソル位置記憶
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal! g'\"" |
+  \ endif

@@ -9,12 +9,12 @@ hook_source = '''
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_add = '''
-  nnoremap <silent> <Space>f :<C-u>Denite<Space>file<CR>
+  nnoremap <silent> <Space>ff :<C-u>Denite<Space>file<CR>
   nnoremap <silent> <Space>fr :<C-u>Denite<Space>file/rec<CR>
   nnoremap <silent> <Space>fo :<C-u>Denite<Space>file/old<CR>
   nnoremap <silent> <Space>b :<C-u>Denite<Space>buffer<CR>
-  nnoremap <silent> <Space>bf :<C-u>DeniteBufferDir<Space>file<CR>
-  nnoremap <silent> <Space>bfr :<C-u>DeniteBufferDir<Space>file/rec<CR>
+  nnoremap <silent> <Space>f :<C-u>DeniteBufferDir<Space>file<CR>
+  nnoremap <silent> <Space>r :<C-u>DeniteBufferDir<Space>file/rec<CR>
   nnoremap <silent> <Space>g :<C-u>Denite<Space>grep<CR>
   nnoremap <silent> <Space>l :<C-u>Denite<Space>line<CR>
 '''

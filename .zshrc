@@ -49,7 +49,24 @@ if type pyenv > /dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-### Set Prompt
+## zsh completion
+autoload -Uz compinit
+compinit
+
+# Enable to change directory with no "cd command".
+setopt auto_cd
+
+# Enable to show history of directory with TAB
+setopt auto_pushd
+
+# Suggest correct
+setopt correct
+
+# 大文字小文字に関わらず候補が見つからない時のみ補完
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+
+## Set Prompt
+
 autoload -Uz colors
 colors
 

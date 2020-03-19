@@ -70,7 +70,7 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 autoload -Uz colors
 colors
 
-PROMPT="%{${fg[green]}%}[%n@%m]%{${reset_color}%} %{${fg[cyan]}%}%~
+PROMPT="%{${fg[cyan]}%}%n@%m:%~%{${reset_color}%} %{${fg[green]}%}%D{%Y/%m/%d}%{${reset_color}%} %{${fg[yellow]}%}%!
 %{${reset_color}%}%# "
 
 PROMPT2="%{$fg[yellow]%}%_> %{$reset_color%}"

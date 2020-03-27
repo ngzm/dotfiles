@@ -65,12 +65,14 @@ setopt correct
 # 大文字小文字に関わらず候補が見つからない時のみ補完
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 
+bindkey -e
+
 ## Set Prompt
 
 autoload -Uz colors
 colors
 
-PROMPT="%{${fg[cyan]}%}%n@%m:%~%{${reset_color}%} %{${fg[green]}%}%D{%Y/%m/%d}%{${reset_color}%} %{${fg[yellow]}%}%!
+PROMPT="%{${fg[cyan]}%}%n@%m:%~%{${reset_color}%} %{${fg[green]}%}%D{%Y/%m/%d %H:%M:%S}%{${reset_color}%} %{${fg[yellow]}%}#%!
 %{${reset_color}%}%# "
 
 PROMPT2="%{$fg[yellow]%}%_> %{$reset_color%}"

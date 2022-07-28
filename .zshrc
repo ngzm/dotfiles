@@ -27,10 +27,15 @@ if type nvim > /dev/null 2>&1; then
   alias vi='nvim'
 fi
 
+## nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 ## nodebrew
-if type nodebrew > /dev/null 2>&1; then
-  export PATH="$HOME/.nodebrew/current/bin:$PATH"
-fi
+# if type nodebrew > /dev/null 2>&1; then
+#  export PATH="$HOME/.nodebrew/current/bin:$PATH"
+# fi
 
 ## rbenv
 if type rbenv > /dev/null 2>&1; then
